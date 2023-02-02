@@ -10,7 +10,7 @@ export default class SideViewController extends ZepetoScriptBehaviour {
     public customCamera: UnityEngine.Camera;
     public cameraDistance: number = 10;
 
-    private originSpawnPoint: Vector3 = new Vector3(-16, -5, 0);
+    private originSpawnPoint: Vector3 = new Vector3(0.1, 0.1, -7.8);
     private myCharacter: ZepetoCharacter;
     private startPos: Vector2 = Vector2.zero;
     private curPos: Vector2 = Vector2.zero;
@@ -95,7 +95,7 @@ export default class SideViewController extends ZepetoScriptBehaviour {
         }
 
         let characterPos = this.myCharacter.transform.position;
-        let cameraPosition = new Vector3(characterPos.x - this.cameraDistance, characterPos.y + 1, characterPos.z);
+        let cameraPosition = new Vector3(characterPos.x, characterPos.y + 1, characterPos.z  - this.cameraDistance);
         this.customCamera.transform.position = cameraPosition;
     }
 }
