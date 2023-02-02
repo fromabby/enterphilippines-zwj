@@ -1,0 +1,25 @@
+{
+  "name": "enter-philippines",
+  "version": "1.0.0",
+  "description": "zepeto world jam 2023 entry - Enter Philippines",
+  "main": "index.js",
+  "dependencies": {
+    "@zepeto/sandbox": "file:Library/Packages/zepeto-sandbox.tgz",
+    "typescript": "^4.3.5",
+    "zepeto-script-compiler": "file:Library/Packages/zepeto-script-compiler.tgz"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fromabby/enterphilippines-zwj.git"
+  },
+  "author": "Anne Bernadette Bonuan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fromabby/enterphilippines-zwj/issues"
+  },
+  "homepage": "https://github.com/fromabby/enterphilippines-zwj#readme"
+}
