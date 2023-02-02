@@ -1,0 +1,35 @@
+fileFormatVersion: 2
+guid: 8d23831f8d5f6814cb0d8d222998bde7
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass MoveSideways extends ZEPETO_Script_1.ZepetoScriptBehaviour
+    {\r\n    constructor() {\r\n        super(...arguments);\r\n        this.speed
+    = 1;\r\n    }\r\n    Start() {\r\n        this.movingUp = true;\r\n    }\r\n   
+    Update() {\r\n        const yPosition = this.transform.position.y;\r\n       
+    if (this.movingUp) {\r\n            this.transform.Translate(UnityEngine_1.Vector3.op_Multiply(UnityEngine_1.Vector3.op_Multiply(UnityEngine_1.Vector3.up,
+    this.speed), UnityEngine_1.Time.deltaTime));\r\n            if (yPosition >=
+    5) {\r\n                this.movingUp = false;\r\n            }\r\n        }\r\n       
+    else {\r\n            this.transform.Translate(UnityEngine_1.Vector3.op_Multiply(UnityEngine_1.Vector3.op_Multiply(UnityEngine_1.Vector3.down,
+    this.speed), UnityEngine_1.Time.deltaTime));\r\n            if (yPosition <=
+    4.5) {\r\n                this.movingUp = true;\r\n            }\r\n        }\r\n   
+    }\r\n}\r\nexports.default = MoveSideways;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTW92ZVVwRG93bi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIk1vdmVVcERvd24udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSw2Q0FBNEM7QUFDNUMsaURBQXFEO0FBRXJELE1BQXFCLFlBQWEsU0FBUSxxQ0FBcUI7SUFBL0Q7O1FBRVksVUFBSyxHQUFXLENBQUMsQ0FBQztJQXNCOUIsQ0FBQztJQXBCRyxLQUFLO1FBQ0QsSUFBSSxDQUFDLFFBQVEsR0FBRyxJQUFJLENBQUM7SUFDekIsQ0FBQztJQUNELE1BQU07UUFDSixNQUFNLFNBQVMsR0FBRyxJQUFJLENBQUMsU0FBUyxDQUFDLFFBQVEsQ0FBQyxDQUFDLENBQUE7UUFFM0MsSUFBSSxJQUFJLENBQUMsUUFBUSxFQUFFO1lBQ2pCLElBQUksQ0FBQyxTQUFTLENBQUMsU0FBUyxDQWRqQixxQkFBTyxDQTJCeXpxQixXQUFZLENBM0I1MHFCLHFCQUFPLENBMkJ5enFCLFdBQVksQ0FiMXpxQixxQkFBTyxDQUFDLEVBQUUsRUFBRyxJQUFJLENBQUMsS0FBSyxHQUFHLGtCQUFJLENBQUMsU0FBUyxFQUFDLENBQUE7WUFFbEUsSUFBSSxTQUFTLElBQUksQ0FBQyxFQUFFO2dCQUNsQixJQUFJLENBQUMsUUFBUSxHQUFHLEtBQUssQ0FBQTthQUN0QjtTQUNGO2FBQU07WUFDTCxJQUFJLENBQUMsU0FBUyxDQUFDLFNBQVMsQ0FwQmpCLHFCQUFPLENBMkJ5enFCLFdBQVksQ0EzQjUwcUIscUJBQU8sQ0EyQnl6cUIsV0FBWSxDQVAxenFCLHFCQUFPLENBQUMsSUFBSSxFQUFHLElBQUksQ0FBQyxLQUFLLEdBQUcsa0JBQUksQ0FBQyxTQUFTLEVBQUMsQ0FBQTtZQUVwRSxJQUFHLFNBQVMsSUFBSSxHQUFHLEVBQUU7Z0JBQ25CLElBQUksQ0FBQyxRQUFRLEdBQUcsSUFBSSxDQUFBO2FBQ3JCO1NBQ0Y7SUFDSCxDQUFDO0NBQ0o7QUF4QkQsK0JBd0JDIn0=","assetPath":"Assets/MoveUpDown.ts","manifest":{"properties":[],"name":"MoveSideways","description":""},"isCompiled":true}'
+  typescriptHash: 697ccfd4446d21ed6e455e5b8fb8faa2
+  onlyWriteTrigger: 0
