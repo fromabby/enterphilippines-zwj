@@ -1,0 +1,34 @@
+fileFormatVersion: 2
+guid: c44d58701ed4f10489d166b6d0b71d6a
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass MoveSideways extends ZEPETO_Script_1.ZepetoScriptBehaviour
+    {\r\n    Start() {\r\n        this.isMovingRight = true;\r\n    }\r\n    Update()
+    {\r\n        const xPosition = this.transform.position.x;\r\n        if (this.isMovingRight)
+    {\r\n            this.transform.Translate(UnityEngine_1.Vector3.op_Multiply(UnityEngine_1.Vector3.op_Multiply(UnityEngine_1.Vector3.right,
+    this.speed), UnityEngine_1.Time.deltaTime));\r\n            if (xPosition >=
+    this.maxLeftPos) {\r\n                this.isMovingRight = false;\r\n           
+    }\r\n        }\r\n        else {\r\n            this.transform.Translate(UnityEngine_1.Vector3.op_Multiply(UnityEngine_1.Vector3.op_Multiply(UnityEngine_1.Vector3.left,
+    this.speed), UnityEngine_1.Time.deltaTime));\r\n            if (xPosition <=
+    this.maxRightPos) {\r\n                this.isMovingRight = true;\r\n           
+    }\r\n        }\r\n    }\r\n}\r\nexports.default = MoveSideways;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTW92ZVNpZGV3YXlzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiTW92ZVNpZGV3YXlzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNkNBQTRDO0FBQzVDLGlEQUFxRDtBQUVyRCxNQUFxQixZQUFhLFNBQVEscUNBQXFCO0lBTTNELEtBQUs7UUFDRCxJQUFJLENBQUMsYUFBYSxHQUFHLElBQUksQ0FBQztJQUM5QixDQUFDO0lBQ0QsTUFBTTtRQUNKLE1BQU0sU0FBUyxHQUFHLElBQUksQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUFDLENBQUMsQ0FBQTtRQUUzQyxJQUFJLElBQUksQ0FBQyxhQUFhLEVBQUU7WUFDdEIsSUFBSSxDQUFDLFNBQVMsQ0FBQyxTQUFTLENBaEJqQixxQkFBTyxDQTZCd3NxQixXQUFZLENBN0IzdHFCLHFCQUFPLENBNkJ3c3FCLFdBQVksQ0FienNxQixxQkFBTyxDQUFDLEtBQUssRUFBRyxJQUFJLENBQUMsS0FBSyxHQUFHLGtCQUFJLENBQUMsU0FBUyxFQUFDLENBQUE7WUFFckUsSUFBSSxTQUFTLElBQUksSUFBSSxDQUFDLFVBQVUsRUFBRTtnQkFDaEMsSUFBSSxDQUFDLGFBQWEsR0FBRyxLQUFLLENBQUE7YUFDM0I7U0FDRjthQUFNO1lBQ0wsSUFBSSxDQUFDLFNBQVMsQ0FBQyxTQUFTLENBdEJqQixxQkFBTyxDQTZCd3NxQixXQUFZLENBN0IzdHFCLHFCQUFPLENBNkJ3c3FCLFdBQVksQ0FQenNxQixxQkFBTyxDQUFDLElBQUksRUFBRyxJQUFJLENBQUMsS0FBSyxHQUFHLGtCQUFJLENBQUMsU0FBUyxFQUFDLENBQUE7WUFFcEUsSUFBRyxTQUFTLElBQUksSUFBSSxDQUFDLFdBQVcsRUFBRTtnQkFDaEMsSUFBSSxDQUFDLGFBQWEsR0FBRyxJQUFJLENBQUE7YUFDMUI7U0FDRjtJQUNILENBQUM7Q0FDSjtBQTFCRCwrQkEwQkMifQ==","assetPath":"Assets/Scripts/MoveSideways.ts","manifest":{"properties":[{"assembly":"mscorlib","name":"speed","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"mscorlib","name":"maxRightPos","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"mscorlib","name":"maxLeftPos","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"MoveSideways","description":""},"isCompiled":true}'
+  typescriptHash: 69490f29c208f66644cb56ff8797467f
+  onlyWriteTrigger: 0

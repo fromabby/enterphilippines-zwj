@@ -1,0 +1,43 @@
+fileFormatVersion: 2
+guid: b3cfa5eb732ca4345b71e6e3c1a0ae4f
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Character_Controller_1 = require(\"ZEPETO.Character.Controller\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst GameObjectTypes_1 = require(\"./Types/GameObjectTypes\");\r\nclass
+    FallingObject extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    // todo:
+    fall per objectNumber\r\n    Update() {\r\n        this.transform.Translate(UnityEngine_1.Vector3.op_Multiply(UnityEngine_1.Vector3.op_Multiply(UnityEngine_1.Vector3.down,
+    this.speed), UnityEngine_1.Time.deltaTime));\r\n        // this.transform.Translate(Vector3.down
+    * this.speed * 5/this.objectNumber * Time.deltaTime)\r\n    }\r\n    OnTriggerEnter(other)
+    {\r\n        if (other.gameObject.tag === GameObjectTypes_1.GameTags.SafeFloor)
+    {\r\n            UnityEngine_1.GameObject.Destroy(this.gameObject);\r\n           
+    // this.StartCoroutine(this.Respawn(0,3))\r\n            return;\r\n        }\r\n       
+    const character = other.gameObject.GetComponent($typeof(ZEPETO_Character_Controller_1.ZepetoCharacter))
+    || null;\r\n        if (!!character) {\r\n            // GameObject.Destroy(this.gameObject)\r\n           
+    this.StartCoroutine(this.Respawn(0, 3));\r\n            this.StartCoroutine(this.Respawn(0,
+    0));\r\n        }\r\n    }\r\n    // todo: CODE: respawn after x seconds\r\n   
+    *Respawn(timeToDespawn, timeToRespawn) {\r\n        console.log(this.gameObject.activeSelf);\r\n       
+    if (this.gameObject.activeSelf) {\r\n            yield new UnityEngine_1.WaitForSeconds(timeToDespawn);\r\n           
+    this.gameObject.SetActive(false);\r\n            return;\r\n        }\r\n       
+    this.gameObject.SetActive(true);\r\n        this.transform.position = new UnityEngine_1.Vector3(this.initialPosX,
+    this.initialPosY, this.initialPosZ);\r\n    }\r\n}\r\nexports.default = FallingObject;\r\n//#
+    sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRmFsbGluZ09iamVjdC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkZhbGxpbmdPYmplY3QudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSw2Q0FBaUY7QUFDakYsNkVBQTZEO0FBQzdELGlEQUFxRDtBQUNyRCw2REFBa0Q7QUFFbEQsTUFBcUIsYUFBYyxTQUFRLHFDQUFxQjtJQU85RCw4QkFBOEI7SUFDOUIsTUFBTTtRQUNKLElBQUksQ0FBQyxTQUFTLENBQUMsU0FBUyxDQWRTLHFCQUFPLENBK0N1OG9CLFdBQVksQ0EvQzE5b0IscUJBQU8sQ0ErQ3U4b0IsV0FBWSxDQWpDbCtvQixxQkFBTyxDQUFDLElBQUksRUFBRyxJQUFJLENBQUMsS0FBSyxHQUFHLGtCQUFJLENBQUMsU0FBUyxFQUFDLENBQUE7UUFDcEUsNkZBQTZGO0lBQy9GLENBQUM7SUFFRCxjQUFjLENBQUMsS0FBZTtRQUM1QixJQUFHLEtBQUssQ0FBQyxVQUFVLENBQUMsR0FBRyxLQUFLLDBCQUFRLENBQUMsU0FBUyxFQUFFO1lBQzlDLHdCQUFVLENBQUMsT0FBTyxDQUFDLElBQUksQ0FBQyxVQUFVLENBQUMsQ0FBQTtZQUNuQyx5Q0FBeUM7WUFDekMsT0FBTTtTQUNQO1FBRUQsTUFBTSxTQUFTLEdBQUcsS0FBSyxDQUFDLFVBQVUsQ0FBQyxZQUFZLFNBQUMsNkNBQWUsTUFBTyxJQUFJLENBQUE7UUFFMUUsSUFBRyxDQUFDLENBQUMsU0FBUyxFQUFFO1lBRWQsc0NBQXNDO1lBQ3RDLElBQUksQ0FBQyxjQUFjLENBQUMsSUFBSSxDQUFDLE9BQU8sQ0FBQyxDQUFDLEVBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQTtZQUN0QyxJQUFJLENBQUMsY0FBYyxDQUFDLElBQUksQ0FBQyxPQUFPLENBQUMsQ0FBQyxFQUFDLENBQUMsQ0FBQyxDQUFDLENBQUE7U0FDdkM7SUFDSCxDQUFDO0lBQ0Qsc0NBQXNDO0lBQ3RDLENBQUMsT0FBTyxDQUFDLGFBQW9CLEVBQUUsYUFBb0I7UUFDakQsT0FBTyxDQUFDLEdBQUcsQ0FBQyxJQUFJLENBQUMsVUFBVSxDQUFDLFVBQVUsQ0FBQyxDQUFBO1FBQ3ZDLElBQUcsSUFBSSxDQUFDLFVBQVUsQ0FBQyxVQUFVLEVBQUU7WUFDN0IsTUFBTSxJQUFJLDRCQUFjLENBQUMsYUFBYSxDQUFDLENBQUE7WUFDdkMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxTQUFTLENBQUMsS0FBSyxDQUFDLENBQUE7WUFDaEMsT0FBTTtTQUNQO1FBRUQsSUFBSSxDQUFDLFVBQVUsQ0FBQyxTQUFTLENBQUMsSUFBSSxDQUFDLENBQUE7UUFDL0IsSUFBSSxDQUFDLFNBQVMsQ0FBQyxRQUFRLEdBQUcsSUFBSSxxQkFBTyxDQUFDLElBQUksQ0FBQyxXQUFXLEVBQUUsSUFBSSxDQUFDLFdBQVcsRUFBRSxJQUFJLENBQUMsV0FBVyxDQUFDLENBQUE7SUFDN0YsQ0FBQztDQUNGO0FBekNELGdDQXlDQyJ9","assetPath":"Assets/Scripts/FallingObject.ts","manifest":{"properties":[{"assembly":"mscorlib","name":"speed","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"mscorlib","name":"objectNumber","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"mscorlib","name":"initialPosX","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"mscorlib","name":"initialPosY","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"mscorlib","name":"initialPosZ","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"FallingObject","description":""},"isCompiled":true}'
+  typescriptHash: 325e0be9ba715da51710e7c27afef33f
+  onlyWriteTrigger: 0
