@@ -1,4 +1,4 @@
-import { Collider, GameObject, Time, Vector3, WaitForSeconds } from 'UnityEngine'
+import { BoxCollider, Collider, Collision, GameObject, Quaternion, Rigidbody, SphereCollider, Vector3 } from 'UnityEngine'
 import { ZepetoCharacter } from 'ZEPETO.Character.Controller'
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
 import { GameTags } from './Types/GameObjectTypes'
@@ -9,39 +9,32 @@ export default class FallingObject extends ZepetoScriptBehaviour {
   public initialPosX: number;
   public initialPosY: number;
   public initialPosZ: number;
-
-  // todo: fall per objectNumber
-  Update() {
-    this.transform.Translate(Vector3.down * this.speed * Time.deltaTime)
-    // this.transform.Translate(Vector3.down * this.speed * 5/this.objectNumber * Time.deltaTime)
-  }
-
-  OnTriggerEnter(other: Collider) {    
-    if(other.gameObject.tag === GameTags.SafeFloor) {
-      GameObject.Destroy(this.gameObject)
-      // this.StartCoroutine(this.Respawn(0,3))
-      return
+  
+  OnTriggerEnter(collider: Collider) {   
+    try {
+      const character = collider.gameObject.GetComponent<ZepetoCharacter>() || null
+    
+      if(!!character && this.GetComponent<BoxCollider>()) {
+        this.GetComponent<Rigidbody>().isKinematic = false
+        this.GetComponent<BoxCollider>().isTrigger = false
+        this.GetComponent<BoxCollider>().size = new Vector3(1,2,1)
+        this.GetComponent<BoxCollider>().center = new Vector3(0,0,-0.004243255)
+      }
+      
+      if(collider.gameObject.tag === GameTags.SafeFloor) {
+        GameObject.Destroy(this.gameObject)
+      }
+    } catch (error) {
+      console.log(error)
     }
 
-    const character = other.gameObject.GetComponent<ZepetoCharacter>() || null
+  }
 
+  OnCollisionEnter(collision: Collision) {
+    const character = collision.gameObject.GetComponent<ZepetoCharacter>() || null
     if(!!character) {
-
-      // GameObject.Destroy(this.gameObject)
-      this.StartCoroutine(this.Respawn(0,3))
-      this.StartCoroutine(this.Respawn(0,0))
+      GameObject.Destroy(this.gameObject)
+      character.Teleport(new Vector3(0,1,0), Quaternion.identity)
     }
-  }
-  // todo: CODE: respawn after x seconds
-  *Respawn(timeToDespawn:number, timeToRespawn:number) {
-    console.log(this.gameObject.activeSelf)
-    if(this.gameObject.activeSelf) {
-      yield new WaitForSeconds(timeToDespawn)
-      this.gameObject.SetActive(false)
-      return
-    }
-
-    this.gameObject.SetActive(true)
-    this.transform.position = new Vector3(this.initialPosX, this.initialPosY, this.initialPosZ)
   }
 }

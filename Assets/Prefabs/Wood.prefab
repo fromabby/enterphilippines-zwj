@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3148763473606641984}
   - component: {fileID: 9041803204957095316}
   - component: {fileID: 4487130178461476126}
-  - component: {fileID: 3923018552156579753}
   - component: {fileID: 411900294024069599}
+  - component: {fileID: 8987061357857490193}
   m_Layer: 0
   m_Name: Wood
   m_TagString: Untagged
@@ -27,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8856386536484649326}
-  m_LocalRotation: {x: 0.000000067179585, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 25, y: -8.96, z: 1.03}
-  m_LocalScale: {x: 0.14444399, y: 0.12, z: 0.12}
+  m_LocalScale: {x: 0.19119912, y: 0.12406487, z: 0.12}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -83,20 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3923018552156579753
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8856386536484649326}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1736622283181914040, guid: 16a453fac8bc7304dbb2bfedc10802ba, type: 3}
 --- !u!114 &411900294024069599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,17 +98,31 @@ MonoBehaviour:
   script:
     keys:
     - speed
-    - maxRightPos
-    - maxLeftPos
+    - maxUpPosition
+    - maxDownPosition
     unityValues:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     values:
-    - '{"type":"System.Single, mscorlib","value":"0.3"}'
-    - '{"type":"System.Single, mscorlib","value":"25"}'
-    - '{"type":"System.Single, mscorlib","value":"32"}'
+    - '{"type":"System.Single, mscorlib","value":"1.2"}'
+    - '{"type":"System.Single, mscorlib","value":"8"}'
+    - '{"type":"System.Single, mscorlib","value":"2.2"}'
     unityArrayValues: []
     arrayValues: []
-    script: {fileID: 4458252877524076426, guid: c44d58701ed4f10489d166b6d0b71d6a, type: 3}
+    script: {fileID: 4458252877524076426, guid: 8d23831f8d5f6814cb0d8d222998bde7, type: 3}
     isExpaned: 0
+--- !u!64 &8987061357857490193
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8856386536484649326}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1736622283181914040, guid: 16a453fac8bc7304dbb2bfedc10802ba, type: 3}

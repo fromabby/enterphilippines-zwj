@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1478010928309667687}
   - component: {fileID: 1478010928309667684}
   m_Layer: 0
-  m_Name: Lava
+  m_Name: Danger Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
