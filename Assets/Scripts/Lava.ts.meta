@@ -19,12 +19,13 @@ ScriptedImporter:
   WrapperFilters: []
   wrapperOutputDirectory: Generated
   compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
-    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
-    ZEPETO_Character_Controller_1 = require(\"ZEPETO.Character.Controller\");\r\nconst
+    { value: true });\r\nconst ZEPETO_Character_Controller_1 = require(\"ZEPETO.Character.Controller\");\r\nconst
+    UnityEngine_SceneManagement_1 = require(\"UnityEngine.SceneManagement\");\r\nconst
     ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass Lava extends ZEPETO_Script_1.ZepetoScriptBehaviour
     {\r\n    OnTriggerEnter(other) {\r\n        const character = other?.gameObject?.GetComponent($typeof(ZEPETO_Character_Controller_1.ZepetoCharacter));\r\n       
-    if (!!character) {\r\n            character.Teleport(new UnityEngine_1.Vector3(0,
-    1, 0), UnityEngine_1.Quaternion.identity);\r\n        }\r\n    }\r\n}\r\nexports.default
-    = Lava;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTGF2YS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkxhdmEudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSw2Q0FBMkQ7QUFDM0QsNkVBQTZEO0FBQzdELGlEQUFxRDtBQUVyRCxNQUFxQixJQUFLLFNBQVEscUNBQXFCO0lBRXJELGNBQWMsQ0FBQyxLQUFlO1FBQzVCLE1BQU0sU0FBUyxHQUFHLEtBQUssRUFBRSxVQUFVLEVBQUUsWUFBWSxTQUFDLDZDQUFlLEVBQUcsQ0FBQTtRQUVwRSxJQUFHLENBQUMsQ0FBQyxTQUFTLEVBQUU7WUFDZCxTQUFTLENBQUMsUUFBUSxDQUFDLElBQUkscUJBQU8sQ0FBQyxDQUFDLEVBQUMsQ0FBQyxFQUFDLENBQUMsQ0FBQyxFQUFFLHdCQUFVLENBQUMsUUFBUSxDQUFDLENBQUE7U0FDNUQ7SUFDSCxDQUFDO0NBQ0Y7QUFURCx1QkFTQyJ9","assetPath":"Assets/Scripts/Lava.ts","manifest":{"properties":[],"name":"Lava","description":""},"isCompiled":true}'
-  typescriptHash: 23dd7d5f2b768bfc79a0444786ecf6a6
+    if (!!character) {\r\n            const yPosition = UnityEngine_SceneManagement_1.SceneManager.GetActiveScene().buildIndex
+    === 0 ? 1 : 0;\r\n            // character.Teleport(new Vector3(0,yPosition,0),
+    Quaternion.identity)\r\n            UnityEngine_SceneManagement_1.SceneManager.LoadScene(UnityEngine_SceneManagement_1.SceneManager.GetActiveScene().buildIndex);\r\n       
+    }\r\n    }\r\n}\r\nexports.default = Lava;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTGF2YS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkxhdmEudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFDQSw2RUFBNkQ7QUFDN0QsNkVBQTJEO0FBQzNELGlEQUFxRDtBQUVyRCxNQUFxQixJQUFLLFNBQVEscUNBQXFCO0lBRXJELGNBQWMsQ0FBQyxLQUFlO1FBQzVCLE1BQU0sU0FBUyxHQUFHLEtBQUssRUFBRSxVQUFVLEVBQUUsWUFBWSxTQUFDLDZDQUFlLEVBQUcsQ0FBQTtRQUVwRSxJQUFHLENBQUMsQ0FBQyxTQUFTLEVBQUU7WUFDZCxNQUFNLFNBQVMsR0FBRywwQ0FBWSxDQUFDLGNBQWMsRUFBRSxDQUFDLFVBQVUsS0FBSyxDQUFDLENBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQyxDQUFBO1lBQ3hFLHNFQUFzRTtZQUN0RSwwQ0FBWSxDQUFDLFNBQVMsQ0FBQywwQ0FBWSxDQUFDLGNBQWMsRUFBRSxDQUFDLFVBQVUsQ0FBQyxDQUFBO1NBQ2pFO0lBQ0gsQ0FBQztDQUNGO0FBWEQsdUJBV0MifQ==","assetPath":"Assets/Scripts/Lava.ts","manifest":{"properties":[],"name":"Lava","description":""},"isCompiled":true}'
+  typescriptHash: df2a2f1a568d503372c937f98ae03be3
   onlyWriteTrigger: 0

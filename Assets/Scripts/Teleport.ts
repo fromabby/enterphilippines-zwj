@@ -1,5 +1,5 @@
 import { Collider, GameObject, Quaternion, Vector3 } from 'UnityEngine';
-import { Scene, SceneManager } from 'UnityEngine.SceneManagement';
+import { SceneManager } from 'UnityEngine.SceneManagement';
 import { ZepetoCharacter } from 'ZEPETO.Character.Controller';
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
 

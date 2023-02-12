@@ -1,4 +1,5 @@
 import { BoxCollider, Collider, Collision, GameObject, Quaternion, Rigidbody, SphereCollider, Vector3 } from 'UnityEngine'
+import { SceneManager } from 'UnityEngine.SceneManagement';
 import { ZepetoCharacter } from 'ZEPETO.Character.Controller'
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
 import { GameTags } from './Types/GameObjectTypes'
@@ -34,7 +35,8 @@ export default class FallingObject extends ZepetoScriptBehaviour {
     const character = collision.gameObject.GetComponent<ZepetoCharacter>() || null
     if(!!character) {
       GameObject.Destroy(this.gameObject)
-      character.Teleport(new Vector3(0,1,0), Quaternion.identity)
+      // character.Teleport(new Vector3(0,1,0), Quaternion.identity)
+      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex)
     }
   }
 }

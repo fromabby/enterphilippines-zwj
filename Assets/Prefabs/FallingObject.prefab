@@ -118,18 +118,21 @@ MonoBehaviour:
     - initialPosX
     - objectNumber
     - speed
+    - mygameobject
     unityValues:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
+    - {fileID: 2998773968841339861}
     values:
     - '{"type":"System.Single, mscorlib","value":"0"}'
     - '{"type":"System.Single, mscorlib","value":"0"}'
     - '{"type":"System.Single, mscorlib","value":"0"}'
     - '{"type":"System.Single, mscorlib","value":"0"}'
     - '{"type":"System.Single, mscorlib","value":"0"}'
+    - 
     unityArrayValues: []
     arrayValues: []
     script: {fileID: 4458252877524076426, guid: b3cfa5eb732ca4345b71e6e3c1a0ae4f, type: 3}

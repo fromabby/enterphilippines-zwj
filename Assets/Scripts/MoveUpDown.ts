@@ -15,6 +15,7 @@ export default class MoveUpDown extends ZepetoScriptBehaviour {
     Update() {
       try {
         const yPosition = this.transform.position.y
+        const freeFallSpeed = 2
 
         if (this.isMovingUp) {
           this.transform.Translate(Vector3.up * this.speed * Time.deltaTime)
@@ -23,7 +24,7 @@ export default class MoveUpDown extends ZepetoScriptBehaviour {
             this.isMovingUp = false
           }
         } else {
-          this.transform.Translate(Vector3.down * this.speed * Time.deltaTime)
+          this.transform.Translate(Vector3.down * freeFallSpeed * Time.deltaTime)
 
           if(yPosition <= this.maxDownPosition) {
             this.isMovingUp = true

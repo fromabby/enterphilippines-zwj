@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <created>2023-02-11T14:07:32Z</created>
+    <modified>2023-02-11T14:07:32Z</modified>
+    <revision>1.0</revision>
+  </asset>
+  <library_images>
+    <image id="MossyRockFiller-diffuse-tex" name="MossyRockFiller-diffuse-tex">
+      <init_from>1 x 1 Mossy Rock Filler_res/MossyRockFiller_diffuse.png</init_from>
+    </image>
+    <image id="MossyRockFiller-emissive-tex" name="MossyRockFiller-emissive-tex">
+      <init_from>1 x 1 Mossy Rock Filler_res/MossyRockFiller_emissive.png</init_from>
+    </image>
+    <image id="Wall-diffuse-tex" name="Wall-diffuse-tex">
+      <init_from>1 x 1 Mossy Rock Filler_res/Wall_diffuse.png</init_from>
+    </image>
+    <image id="Wall-emissive-tex" name="Wall-emissive-tex">
+      <init_from>1 x 1 Mossy Rock Filler_res/Wall_emissive.png</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="MossyRockFiller-Effect">
+      <profile_COMMON>
+        <newparam sid="MossyRockFiller-diffuse-surface">
+          <surface type="2D">
+            <init_from>MossyRockFiller-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="MossyRockFiller-emissive-surface">
+          <surface type="2D">
+            <init_from>MossyRockFiller-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="MossyRockFiller-diffuse-sampler">
+          <sampler2D>
+            <source>MossyRockFiller-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="MossyRockFiller-emissive-sampler">
+          <sampler2D>
+            <source>MossyRockFiller-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="MossyRockFiller-tex-bind" texture="MossyRockFiller-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="MossyRockFiller-tex-bind" texture="MossyRockFiller-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Wall-Effect">
+      <profile_COMMON>
+        <newparam sid="Wall-diffuse-surface">
+          <surface type="2D">
+            <init_from>Wall-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Wall-emissive-surface">
+          <surface type="2D">
+            <init_from>Wall-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Wall-diffuse-sampler">
+          <sampler2D>
+            <source>Wall-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="Wall-emissive-sampler">
+          <sampler2D>
+            <source>Wall-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="Wall-tex-bind" texture="Wall-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="Wall-tex-bind" texture="Wall-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="MossyRockFiller-Material">
+      <instance_effect url="#MossyRockFiller-Effect"/>
+    </material>
+    <material id="Wall-Material">
+      <instance_effect url="#Wall-Effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="MossyRockFiller-Geom" name="MossyRockFiller-Geom">
+      <mesh>
+        <source id="MossyRockFiller-Pos">
+          <float_array count="72" id="MossyRockFiller-Pos-array">-16.0 -16.0 16.0 -16.0 16.0 16.0 -16.0 16.0 -16.0 -16.0 -16.0 -16.0 16.0 -16.0 -16.0 16.0 16.0 -16.0 16.0 16.0 16.0 16.0 -16.0 16.0 -16.0 -16.0 -16.0 16.0 -16.0 -16.0 16.0 -16.0 16.0 -16.0 -16.0 16.0 -16.0 16.0 16.0 16.0 16.0 16.0 16.0 16.0 -16.0 -16.0 16.0 -16.0 -16.0 16.0 -16.0 16.0 16.0 -16.0 16.0 -16.0 -16.0 -16.0 -16.0 -16.0 -16.0 -16.0 16.0 16.0 -16.0 16.0 16.0 16.0 16.0 -16.0 16.0 16.0 </float_array>
+          <technique_common>
+            <accessor count="24" source="#MossyRockFiller-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="MossyRockFiller-UV">
+          <float_array count="48" id="MossyRockFiller-UV-array">0.0 0.75 0.25 0.75 0.25 1.0 0.0 1.0 0.0 0.734375 0.25 0.734375 0.25 0.484375 0.0 0.484375 0.265625 1.0 0.515625 1.0 0.515625 0.75 0.265625 0.75 0.53125 0.75 0.78125 0.75 0.78125 1.0 0.53125 1.0 0.265625 0.484375 0.515625 0.484375 0.515625 0.734375 0.265625 0.734375 0.53125 0.734375 0.78125 0.734375 0.78125 0.484375 0.53125 0.484375 </float_array>
+          <technique_common>
+            <accessor count="24" source="#MossyRockFiller-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="MossyRockFiller-Normal">
+          <float_array count="18" id="MossyRockFiller-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#MossyRockFiller-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="MossyRockFiller-Vertices">
+          <input semantic="POSITION" source="#MossyRockFiller-Pos"/>
+        </vertices>
+        <polylist count="6" material="MossyRockFiller-Material">
+          <input offset="0" semantic="VERTEX" source="#MossyRockFiller-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#MossyRockFiller-UV"/>
+          <input offset="2" semantic="NORMAL" source="#MossyRockFiller-Normal"/>
+          <vcount>4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 1 5 5 1 6 6 1 7 7 1 8 8 2 9 9 2 10 10 2 11 11 2 12 12 3 13 13 3 14 14 3 15 15 3 16 16 4 17 17 4 18 18 4 19 19 4 20 20 5 21 21 5 22 22 5 23 23 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Wall-Geom" name="Wall-Geom">
+      <mesh>
+        <source id="Wall-Pos">
+          <float_array count="144" id="Wall-Pos-array">-16.0 -16.0 -16.0 -16.0 16.0 -16.0 -16.0 16.0 -17.0 -16.0 -16.0 -17.0 -16.0 -16.0 17.0 -16.0 16.0 17.0 -16.0 16.0 16.000002 -16.0 -16.0 16.000002 16.0 -16.0 -17.0 16.0 16.0 -17.0 16.0 16.0 -16.0 16.0 -16.0 -16.0 16.0 -16.0 16.000002 16.0 16.0 16.000002 16.0 16.0 17.0 16.0 -16.0 17.0 -16.0 -16.0 -17.0 16.0 -16.0 -17.0 16.0 -16.0 -16.0 -16.0 -16.0 -16.0 -16.0 -16.0 16.000002 16.0 -16.0 16.000002 16.0 -16.0 17.0 -16.0 -16.0 17.0 -16.0 16.0 -16.0 16.0 16.0 -16.0 16.0 16.0 -17.0 -16.0 16.0 -17.0 -16.0 16.0 17.0 16.0 16.0 17.0 16.0 16.0 16.000002 -16.0 16.0 16.000002 -16.0 16.0 -17.0 16.0 16.0 -17.0 16.0 -16.0 -17.0 -16.0 -16.0 -17.0 -16.0 16.0 16.000002 16.0 16.0 16.000002 16.0 -16.0 16.000002 -16.0 -16.0 16.000002 -16.0 -16.0 -16.0 16.0 -16.0 -16.0 16.0 16.0 -16.0 -16.0 16.0 -16.0 -16.0 -16.0 17.0 16.0 -16.0 17.0 16.0 16.0 17.0 -16.0 16.0 17.0 </float_array>
+          <technique_common>
+            <accessor count="48" source="#Wall-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Wall-UV">
+          <float_array count="96" id="Wall-UV-array">0.0078125 0.5 0.0078125 1.0 0.0 1.0 0.0 0.5 0.0078125 0.5 0.0078125 1.0 0.0 1.0 0.0 0.5 0.0703125 0.5 0.0703125 1.0 0.078125 1.0 0.078125 0.5 0.0703125 0.5 0.0703125 1.0 0.078125 1.0 0.078125 0.5 0.046875 0.5 0.046875 1.0 0.0546875 1.0 0.0546875 0.5 0.046875 0.5 0.046875 1.0 0.0546875 1.0 0.0546875 0.5 0.03125 0.5 0.03125 1.0 0.0234375 1.0 0.0234375 0.5 0.03125 0.5 0.03125 1.0 0.0234375 1.0 0.0234375 0.5 0.28125 0.5 0.53125 0.5 0.53125 1.0 0.28125 1.0 0.28125 0.5 0.53125 0.5 0.53125 1.0 0.28125 1.0 0.28125 1.0 0.53125 1.0 0.53125 0.5 0.28125 0.5 0.28125 1.0 0.53125 1.0 0.53125 0.5 0.28125 0.5 </float_array>
+          <technique_common>
+            <accessor count="48" source="#Wall-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Wall-Normal">
+          <float_array count="18" id="Wall-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#Wall-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Wall-Vertices">
+          <input semantic="POSITION" source="#Wall-Pos"/>
+        </vertices>
+        <polylist count="12" material="Wall-Material">
+          <input offset="0" semantic="VERTEX" source="#Wall-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#Wall-UV"/>
+          <input offset="2" semantic="NORMAL" source="#Wall-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 0 5 5 0 6 6 0 7 7 0 8 8 1 9 9 1 10 10 1 11 11 1 12 12 1 13 13 1 14 14 1 15 15 1 16 16 2 17 17 2 18 18 2 19 19 2 20 20 2 21 21 2 22 22 2 23 23 2 24 24 3 25 25 3 26 26 3 27 27 3 28 28 3 29 29 3 30 30 3 31 31 3 32 32 4 33 33 4 34 34 4 35 35 4 36 36 4 37 37 4 38 38 4 39 39 4 40 40 5 41 41 5 42 42 5 43 43 5 44 44 5 45 45 5 46 46 5 47 47 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_animations>
+    <animation id="Mossy Rock-global-anim" name="Mossy Rock-global-anim">
+      <animation>
+        <source id="Mossy Rock-global-anim-inSource-TIME">
+          <float_array count="1" id="Mossy Rock-global-anim-inSource-TIME-array">0.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#Mossy Rock-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Mossy Rock-global-anim-interpolation">
+          <Name_array count="1" id="Mossy Rock-global-anim-interpolation-array">LINEAR </Name_array>
+          <technique_common>
+            <accessor count="1" source="#Mossy Rock-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Mossy Rock-global-anim-outSource-global">
+          <float_array count="16" id="Mossy Rock-global-anim-outSource-global-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#Mossy Rock-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Mossy Rock-global-anim-globalSampler">
+          <input semantic="INPUT" source="#Mossy Rock-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Mossy Rock-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#Mossy Rock-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#Mossy Rock-global-anim-globalSampler" target="Mossy Rock-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Mossy Rock-local-anim" name="Mossy Rock-local-anim">
+      <animation>
+        <source id="Mossy Rock-local-anim-inSource-TIME">
+          <float_array count="1" id="Mossy Rock-local-anim-inSource-TIME-array">0.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#Mossy Rock-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Mossy Rock-local-anim-interpolation">
+          <Name_array count="1" id="Mossy Rock-local-anim-interpolation-array">LINEAR </Name_array>
+          <technique_common>
+            <accessor count="1" source="#Mossy Rock-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Mossy Rock-local-anim-outSource-local">
+          <float_array count="16" id="Mossy Rock-local-anim-outSource-local-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 16.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#Mossy Rock-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Mossy Rock-local-anim-localSampler">
+          <input semantic="INPUT" source="#Mossy Rock-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Mossy Rock-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#Mossy Rock-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#Mossy Rock-local-anim-localSampler" target="Mossy Rock-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Wall-global-anim" name="Wall-global-anim">
+      <animation>
+        <source id="Wall-global-anim-inSource-TIME">
+          <float_array count="1" id="Wall-global-anim-inSource-TIME-array">0.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#Wall-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Wall-global-anim-interpolation">
+          <Name_array count="1" id="Wall-global-anim-interpolation-array">LINEAR </Name_array>
+          <technique_common>
+            <accessor count="1" source="#Wall-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Wall-global-anim-outSource-global">
+          <float_array count="16" id="Wall-global-anim-outSource-global-array">9.649992E-5 0.0 1.0 -1.0 0.0 1.0 0.0 0.0 -1.0 0.0 9.649992E-5 -9.6499905E-5 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#Wall-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Wall-global-anim-globalSampler">
+          <input semantic="INPUT" source="#Wall-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Wall-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#Wall-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#Wall-global-anim-globalSampler" target="Wall-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Wall-local-anim" name="Wall-local-anim">
+      <animation>
+        <source id="Wall-local-anim-inSource-TIME">
+          <float_array count="1" id="Wall-local-anim-inSource-TIME-array">0.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#Wall-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Wall-local-anim-interpolation">
+          <Name_array count="1" id="Wall-local-anim-interpolation-array">LINEAR </Name_array>
+          <technique_common>
+            <accessor count="1" source="#Wall-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Wall-local-anim-outSource-local">
+          <float_array count="16" id="Wall-local-anim-outSource-local-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 16.0 0.0 0.0 1.0 0.99999994 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#Wall-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Wall-local-anim-localSampler">
+          <input semantic="INPUT" source="#Wall-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Wall-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#Wall-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#Wall-local-anim-localSampler" target="Wall-local/matrix"/>
+      </animation>
+    </animation>
+  </library_animations>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene">
+      <node id="Root-global" name="Root-global" sid="Root-global">
+        <matrix sid="matrix">1.0 0.0 -8.742278E-8 0.0 0.0 1.0 0.0 0.0 -8.742278E-8 0.0 -1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+        <node id="Mossy Rock-global" name="Mossy Rock-global" sid="Mossy Rock-global">
+          <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+          <node id="Mossy Rock-local" name="Mossy Rock-local" sid="Mossy Rock-local">
+            <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 1.0 0.0 16.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+            <instance_geometry url="#MossyRockFiller-Geom">
+              <bind_material>
+                <technique_common>
+                  <instance_material symbol="MossyRockFiller-Material" target="#MossyRockFiller-Material">
+                    <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="MossyRockFiller-tex-bind"/>
+                  </instance_material>
+                </technique_common>
+              </bind_material>
+            </instance_geometry>
+          </node>
+          <node id="Wall-global" name="Wall-global" sid="Wall-global">
+            <matrix sid="matrix">9.649992E-5 0.0 1.0 -1.0 0.0 1.0 0.0 0.0 -1.0 0.0 9.649992E-5 -9.6499905E-5 0.0 0.0 0.0 1.0 </matrix>
+            <node id="Wall-local" name="Wall-local" sid="Wall-local">
+              <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 1.0 0.0 16.0 0.0 0.0 1.0 0.99999994 0.0 0.0 0.0 1.0 </matrix>
+              <instance_geometry url="#Wall-Geom">
+                <bind_material>
+                  <technique_common>
+                    <instance_material symbol="Wall-Material" target="#Wall-Material">
+                      <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="Wall-tex-bind"/>
+                    </instance_material>
+                  </technique_common>
+                </bind_material>
+              </instance_geometry>
+            </node>
+          </node>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>
