@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 3.0.0 commit date:2021-12-02, commit time:18:35, hash:f1cca3055776</authoring_tool>
+    </contributor>
+    <created>2023-02-26T23:01:12</created>
+    <modified>2023-02-26T23:01:12</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="PlainTexture_003-effect">
+      <profile_COMMON>
+        <newparam sid="RF_png-surface">
+          <surface type="2D">
+            <init_from>RF_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="RF_png-sampler">
+          <sampler2D>
+            <source>RF_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="RF_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="RF_png" name="RF_png">
+      <init_from>RF.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="PlainTexture_003-material" name="PlainTexture.003">
+      <instance_effect url="#PlainTexture_003-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="RF-mesh" name="RF">
+      <mesh>
+        <source id="RF-mesh-positions">
+          <float_array id="RF-mesh-positions-array" count="216">-16.00155 0 15.99846 -16.00155 32 15.99846 -17.00155 32 15.99836 -17.00155 0 15.99836 16.99846 0 16.00164 16.99846 32 16.00164 15.99846 32 16.00155 15.99846 0 16.00155 -16.99846 0 -16.00164 -16.99846 32 -16.00164 -15.99846 32 -16.00155 -15.99846 0 -16.00155 16.00155 0 -15.99846 16.00155 32 -15.99846 17.00155 32 -15.99836 17.00155 0 -15.99836 -17.00155 0 15.99836 -16.99846 0 -16.00164 -15.99846 0 -16.00155 -16.00155 0 15.99846 15.99846 0 16.00155 16.00155 0 -15.99846 17.00155 0 -15.99836 16.99846 0 16.00164 -16.00155 32 15.99846 -15.99846 32 -16.00155 -16.99846 32 -16.00164 -17.00155 32 15.99836 16.99846 32 16.00164 17.00155 32 -15.99836 16.00155 32 -15.99846 15.99846 32 16.00155 -17.00155 32 15.99836 -16.99846 32 -16.00164 -16.99846 0 -16.00164 -17.00155 0 15.99836 15.99846 32 16.00155 16.00155 32 -15.99846 16.00155 0 -15.99846 15.99846 0 16.00155 -16.00155 0 15.99846 -15.99846 0 -16.00155 -15.99846 32 -16.00155 -16.00155 32 15.99846 16.99846 0 16.00164 17.00155 0 -15.99836 17.00155 32 -15.99836 16.99846 32 16.00164 -16 0 16 -16 32 16 -16 32 -16 -16 0 -16 16 0 -16 16 32 -16 16 32 16 16 0 16 -16 0 -16 16 0 -16 16 0 16 -16 0 16 -16 32 16 16 32 16 16 32 -16 -16 32 -16 -16 32 -16 16 32 -16 16 0 -16 -16 0 -16 -16 0 16 16 0 16 16 32 16 -16 32 16</float_array>
+          <technique_common>
+            <accessor source="#RF-mesh-positions-array" count="72" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="RF-mesh-normals">
+          <float_array id="RF-mesh-normals-array" count="48">-9.72748e-5 0 1 -9.53677e-5 0 1 9.53675e-5 0 -1 9.72748e-5 0 -1 0 -1 0 0 1 0 -1 0 -9.65595e-5 -1 0 -9.64701e-5 1 0 9.65297e-5 1 0 9.65595e-5 -1 0 0 1 0 0 0 0 -1 0 0 1 -9.53674e-5 0 1 9.53674e-5 0 -1</float_array>
+          <technique_common>
+            <accessor source="#RF-mesh-normals-array" count="16" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="RF-mesh-map-0">
+          <float_array id="RF-mesh-map-0-array" count="216">0.00390625 1 0 0.75 0.00390625 0.75 0.00390625 1 0 0.75 0.00390625 0.75 0 0.75 0.00390625 0.5 0 0.5 0 0.75 0.00390625 0.5 0 0.5 0 0.5 0.00390625 0.25 0 0.25 0 0.5 0.00390625 0.25 0 0.25 0.00390625 0 0 0.25 0 0 0.00390625 0 0 0.25 0 0 0.1289062 0.75 0.00390625 1 0.00390625 0.75 0.1289062 0.75 0.00390625 1 0.00390625 0.75 0.1289062 1 0.00390625 0.75 0.00390625 1 0.1289062 1 0.00390625 0.75 0.00390625 1 0.2539063 0.75 0.1289062 1 0.1289062 0.75 0.3789063 1 0.2539063 0.75 0.2539063 1 0.5039063 1 0.3789063 0.75 0.3789063 1 0.6289063 0.75 0.5039063 1 0.5039063 0.75 0.7539063 0.75 0.6289063 1 0.6289063 0.75 0.1289062 1 0.00390625 0.75 0.00390625 1 0.00390625 1 0 1 0 0.75 0.00390625 1 0 1 0 0.75 0 0.75 0.00390625 0.75 0.00390625 0.5 0 0.75 0.00390625 0.75 0.00390625 0.5 0 0.5 0.00390625 0.5 0.00390625 0.25 0 0.5 0.00390625 0.5 0.00390625 0.25 0.00390625 0 0.00390625 0.25 0 0.25 0.00390625 0 0.00390625 0.25 0 0.25 0.1289062 0.75 0.1289062 1 0.00390625 1 0.1289062 0.75 0.1289062 1 0.00390625 1 0.1289062 1 0.1289062 0.75 0.00390625 0.75 0.1289062 1 0.1289062 0.75 0.00390625 0.75 0.2539063 0.75 0.2539063 1 0.1289062 1 0.3789063 1 0.3789063 0.75 0.2539063 0.75 0.5039063 1 0.5039063 0.75 0.3789063 0.75 0.6289063 0.75 0.6289063 1 0.5039063 1 0.7539063 0.75 0.7539063 1 0.6289063 1 0.1289062 1 0.1289062 0.75 0.00390625 0.75</float_array>
+          <technique_common>
+            <accessor source="#RF-mesh-map-0-array" count="108" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="RF-mesh-vertices">
+          <input semantic="POSITION" source="#RF-mesh-positions"/>
+        </vertices>
+        <triangles material="PlainTexture_003-material" count="36">
+          <input semantic="VERTEX" source="#RF-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#RF-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#RF-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 3 0 1 0 0 2 5 1 3 7 1 4 4 1 5 9 2 6 11 2 7 8 2 8 13 3 9 15 3 10 12 3 11 17 4 12 19 4 13 16 4 14 21 4 15 23 4 16 20 4 17 24 5 18 26 5 19 27 5 20 28 5 21 30 5 22 31 5 23 33 6 24 35 6 25 32 6 26 37 7 27 39 7 28 36 7 29 41 8 30 43 8 31 40 8 32 45 9 33 47 9 34 44 9 35 49 10 36 51 10 37 48 10 38 53 11 39 55 11 40 52 11 41 57 4 42 59 4 43 56 4 44 61 5 45 63 5 46 60 5 47 65 12 48 67 12 49 64 12 50 69 13 51 71 13 52 68 13 53 1 14 54 2 14 55 3 14 56 5 1 57 6 1 58 7 1 59 9 2 60 10 2 61 11 2 62 13 15 63 14 15 64 15 15 65 17 4 66 18 4 67 19 4 68 21 4 69 22 4 70 23 4 71 24 5 72 25 5 73 26 5 74 28 5 75 29 5 76 30 5 77 33 6 78 34 6 79 35 6 80 37 7 81 38 7 82 39 7 83 41 8 84 42 8 85 43 8 86 45 9 87 46 9 88 47 9 89 49 10 90 50 10 91 51 10 92 53 11 93 54 11 94 55 11 95 57 4 96 58 4 97 59 4 98 61 5 99 62 5 100 63 5 101 65 12 102 66 12 103 67 12 104 69 13 105 70 13 106 71 13 107</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="RF" name="RF" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 -1.62921e-7 -1 0 0 1 -1.62921e-7 0 0 0 0 1</matrix>
+        <instance_geometry url="#RF-mesh" name="RF">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="PlainTexture_003-material" target="#PlainTexture_003-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

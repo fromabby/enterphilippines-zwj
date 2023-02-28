@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SafeFloor
   - UILifeDisplay
+  - TreasureMsg
   layers:
   - Default
   - TransparentFX

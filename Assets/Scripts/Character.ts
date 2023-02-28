@@ -11,15 +11,4 @@ export default class CharacterController extends ZepetoScriptBehaviour {
         let _player: LocalPlayer = ZepetoPlayers.instance.LocalPlayer
     }) 
   }
-
-  OnCollisionEnter(collision: Collision) {
-    console.log('here in collision enter', collision)
-    // const item = collision.gameObject.GetComponent<SphereCollider>() || null
-
-    // if(!!item) {
-    //   // teleport character
-    //   console.log('here in collision enter', collision)
-    //   GameObject.Destroy(item.gameObject)
-    // }
-  }
 }
