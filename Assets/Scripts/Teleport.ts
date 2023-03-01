@@ -8,7 +8,7 @@ export default class Teleport extends ZepetoScriptBehaviour {
     const character: ZepetoCharacter = other.GetComponent<ZepetoCharacter>()
 
     if(!!character) {
-      SceneManager.LoadScene(1)
+      SceneManager.LoadScene('Level2')
     }
 
   }

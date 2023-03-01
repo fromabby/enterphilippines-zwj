@@ -36,8 +36,8 @@ export default class FallingObject extends ZepetoScriptBehaviour {
     const character = collision.gameObject.GetComponent<ZepetoCharacter>() || null
     if(!!character) {
       GameObject.Destroy(this.gameObject)
-      // character.Teleport(new Vector3(0,1,0), Quaternion.identity)
-      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex)
+      const str = SceneManager.GetActiveScene().buildIndex === 0 ? 'Level1' : 'Level2'
+      SceneManager.LoadScene(str)
     }
   }
 }

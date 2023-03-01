@@ -8,7 +8,7 @@ export default class DisplayMessage extends ZepetoScriptBehaviour {
     const character: ZepetoCharacter = other.GetComponent<ZepetoCharacter>()
 
     if(!!character) {
-      SceneManager.LoadScene(2)
+      SceneManager.LoadScene('End')
     }
   }
 }

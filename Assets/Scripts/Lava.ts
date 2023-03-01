@@ -9,9 +9,8 @@ export default class Lava extends ZepetoScriptBehaviour {
     const character = other?.gameObject?.GetComponent<ZepetoCharacter>()
 
     if(!!character) {
-      const yPosition = SceneManager.GetActiveScene().buildIndex === 0 ? 1 : 0
-      // character.Teleport(new Vector3(0,yPosition,0), Quaternion.identity)
-      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex)
+      const str = SceneManager.GetActiveScene().buildIndex === 0 ? 'Level1' : 'Level2'
+      SceneManager.LoadScene(str)
     }
   }
 }
