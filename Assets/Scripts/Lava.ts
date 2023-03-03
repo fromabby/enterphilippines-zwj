@@ -1,4 +1,4 @@
-import { Collider, Quaternion, Vector3 } from 'UnityEngine'
+import { Collider } from 'UnityEngine'
 import { ZepetoCharacter } from 'ZEPETO.Character.Controller'
 import { SceneManager } from 'UnityEngine.SceneManagement';
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
@@ -9,8 +9,11 @@ export default class Lava extends ZepetoScriptBehaviour {
     const character = other?.gameObject?.GetComponent<ZepetoCharacter>()
 
     if(!!character) {
-      const str = SceneManager.GetActiveScene().buildIndex === 0 ? 'Level1' : 'Level2'
-      SceneManager.LoadScene(str)
+      if(SceneManager.GetActiveScene().name === 'Level1') {
+        SceneManager.LoadScene('Level1')
+      } else {
+        SceneManager.LoadScene('Level2')
+      }
     }
   }
 }
